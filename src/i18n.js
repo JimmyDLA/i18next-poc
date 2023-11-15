@@ -1,20 +1,22 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from 'i18next-browser-languagedetector';
-import HttpBackend from 'i18next-http-backend';
+import Backend from 'i18next-locize-backend';
 
 i18n
-  .use(HttpBackend)
+  .use(Backend)
   .use(LanguageDetector) // detects user browser language
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     // the translations
     // (tip move them in a JSON file and import them,
     // or even better, manage them via a UI: https://react.i18next.com/guides/multiple-translation-files#manage-your-translations-with-a-management-gui)
-    debug: true,
     backend: {
-      loadPath: `http://localhost:4000/locales/{{lng}}/{{ns}}.json`
+      projectId: '1c286673-cb89-47f9-b812-1c005c840c1e',
+      apiKey: '26d984cd-42c0-413b-b44e-ad641bff0ebf',
+      referenceLng: '[LNG]'
     },
+    debug: true,
     supportedLngs: ["en", "es"],
     ns: ['translations'],
     // resources: {
