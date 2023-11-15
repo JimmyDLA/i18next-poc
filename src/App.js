@@ -18,8 +18,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div style={{maxWidth: 640}}>
-          <p>{t('greeting')}</p>
-          <p>{t('quotes.bennett')}</p>
+          <p>{t('translations:greeting')}</p>
+          <p>{t('translations:quotes.bennett')}</p>
         </div>
 
         <a
@@ -28,7 +28,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {t('translations:learn')}
         </a>
       </header>
     </div>
